@@ -1,0 +1,12 @@
+[Unit]
+Description=IPFS Daemon
+
+[Service]
+ExecStart=/usr/local/bin/ipfs daemon --enable-namesys-pubsub --enable-pubsub-experiment
+Environment=IPFS_PATH=/home/ipfs
+User=ipfs-daemon
+Restart=always
+LimitNOFILE=10240
+
+[Install]
+WantedBy=multi-user.target
